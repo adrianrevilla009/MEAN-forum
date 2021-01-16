@@ -1,0 +1,27 @@
+###
+
+POST http://localhost:3000/users/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndow@gmail.com",
+    "username": "John",
+    "password": "johnpass"
+}
+
+###
+
+POST http://localhost:3000/users/authenticate HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "John",
+    "password": "johnpass"
+}
+
+###
+
+GET http://localhost:3000/users/profile HTTP/1.1
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDAxNmU5YjY1MTIyYjJjNGUwMmEwYWQiLCJuYW1lIjoiSm9obiBEb2UiLCJlbWFpbCI6ImpvaG5kb3dAZ21haWwuY29tIiwidXNlcm5hbWUiOiJKb2huIiwicGFzc3dvcmQiOiIkMmEkMTAkVGZsQlhLRkI4VnZOTkQ5YmlDQVV1Ljg4YVg1aXF2LmZFeFBaMTNmS3NYSDAvdnhnaG9VTVMiLCJfX3YiOjAsImlhdCI6MTYxMDcwODUyOCwiZXhwIjoxNjExMzEzMzI4fQ.M4sLpCi7RXDNOlrGwmmcEUWSI7qIkXQboosnK2qP9JM
+
