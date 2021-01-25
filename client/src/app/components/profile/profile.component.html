@@ -4,4 +4,6 @@
       <li class="list-group-item">Username : {{user.username}}</li>
       <li class="list-group-item">Email : {{user.email}}</li>
     </ul>
-  </div>
+    <button class="btn btn-success mt-2" [routerLink]="['/edit_profile']" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">Edit profile</button>
+</div>
+

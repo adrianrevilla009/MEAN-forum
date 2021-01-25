@@ -3,26 +3,17 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
-const mongoose = require('mongoose');
 const users = require('./routes/users');
-const config = require('./config/database');
 
-
-// DB connect and error
-mongoose.connect(config.database);
-mongoose.connection.on('connected', () => {
-    console.log('Connected to database', config.database)
-});
-mongoose.connection.on('error', (err) => {
-    console.log('Database error', err)
-});
+// Start dabatase
+require('./database');
 
 // Set up server
 const app = express();
 const port = process.env.PORT || 8080;
 
 // Cors middleware
-app.use(cors());
+app.use(cors({origin: 'http://localhost:4200'}));
 // Body Parser middleware
 app.use(bodyParser.json());
 // Passport middleware

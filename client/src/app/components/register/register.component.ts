@@ -29,7 +29,21 @@ export class RegisterComponent implements OnInit {
       name: this.name,
       username: this.username,
       email: this.email,
-      password: this.password
+      password: this.password,
+      details: {
+        country: '',
+        city: '',
+        adress: '',
+        telephone: '',
+        image: '',
+        short_description: '',
+        about: '',
+        check_newsletter:  false,
+        check_posts:  false,
+        check_offers:  false,
+        last_conexion: new Date(),
+        register_date: new Date()
+      }
     }
     // validate register data
     if(!this.validateService.validateRegister(user)) {
